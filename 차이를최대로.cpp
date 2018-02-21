@@ -13,26 +13,30 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		cin >> a[i];
 	}
-	sort(a.begin(), a.begin());
+	sort(a.begin(), a.end());
 
-	int max = 0 ;
+	int ans = 0;
 	do{
 
 		int sum = 0;
 
-		for (int i = 0; i < n; i++) {
-			sum += abs(a[i] - a[i + 1]);
-		}
-		/*for (int i = 2; i < n + 1; i++) {
-			sum += (a[n - 2] - a[n - 1]);
+		/*for (int i = 1; i < a.size(); i++) {
+
+			sum += abs(a[i] - a[i - 1]);
+
 		}*/
-		if (max < sum) {
-			max = sum;
+		for (int i = 0; i < a.size()-1; i++) {
+
+			sum += abs(a[i] - a[i + 1]);
+
 		}
+
+		ans = max(ans, sum);
+
 	} while (next_permutation(a.begin(), a.end()));
 
 
-	cout << max << "\n";
+	cout << ans << "\n";
 	system("pause");
 	return 0;
 
