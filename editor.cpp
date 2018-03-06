@@ -57,11 +57,11 @@ int main()
 					cursor = temp;
 				}
 			}
-		
+
 			print(editor);
-		
+
 		}
-		
+
 	}
 	else {
 		printf("error");
